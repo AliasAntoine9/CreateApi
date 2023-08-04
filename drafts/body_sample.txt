@@ -1,0 +1,7 @@
+{
+  "buy_timestamp": "2023-07-20 14:45",
+  "price_when_bought": 0.2751,
+  "price_to_sale": 0.2851,
+  "sold_timestamp": "2023-07-31 01:15",
+  "price_when_sold": 0.2963 
+}
