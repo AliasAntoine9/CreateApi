@@ -1,7 +1,9 @@
 """Create an API with Flask: Flask wrapper"""
+from flask import Flask
 
-from endpoints.vetchain import api
+from endpoints.vetchain import create_closed_position
 
 
-if __name__ == "__main__":
-	api.run(host="0.0.0.0", port=5000, debug=True)
+api = Flask(__name__)
+
+api.add_url_rule("/api/v1/create_closed_position", endpoint="create_closed_position", view_func=create_closed_position, methods=["POST"])
