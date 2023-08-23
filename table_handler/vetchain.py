@@ -11,9 +11,9 @@ SESSION = sessionmaker(bind=ENGINE)()
 BASE = declarative_base()
 
 
-class VetClosedPositions(BASE):
-	"""Table VET closed positions"""
-	__tablename__ = "vet_closed_positions"
+class ClosedPositions(BASE):
+	"""Table closed positions"""
+	__tablename__ = "closed_positions"
 
 	buy_timestamp = Column(String(120), nullable=False, primary_key=True, unique=True)
 	price_when_bought = Column(Float(), nullable=False)
@@ -29,9 +29,9 @@ def add_closed_position(
 		sold_timestamp,
 		price_when_sold,
 		) -> bool:
-	"""This method is adding a new closed position in vet_closed_positions table"""
+	"""This method is adding a new closed position in closed_positions table"""
 	try:
-		closed_positions = VetClosedPositions(
+		closed_positions = ClosedPositions(
 			buy_timestamp=buy_timestamp,
 			price_when_bought=price_when_bought,
 			price_to_sale=price_to_sale,

@@ -1,12 +1,11 @@
 from flask import jsonify, request
-from werkzeug.exceptions import HTTPException
 
 import table_handler.vetchain as vetchain
 from table_handler.vetchain import add_closed_position
 
 
 def create_closed_position():
-	"""This method insert a new closed position in the BDD"""
+	"""This method insert a new closed position in the DB"""
 	payload = request.get_json()
 	try:
 		result = add_closed_position(**payload)
